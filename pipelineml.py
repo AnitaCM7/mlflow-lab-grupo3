@@ -1,3 +1,5 @@
+# filepath: /ml-pipeline-project/ml-pipeline-project/src/pipelineml.py
+import pandas as pd
 from data_loader import load_data
 from data_preparation import prepare_data
 from model_trainer import train_model
@@ -5,11 +7,16 @@ from model_registry import register_model
 
 def main():
     # Load data
-    data = load_data("data/in/application_data.csv")
+    # data = load_data("D:/Proyectos/mlflow/repositorios/Introduction-to-mlflow/data/in/application_data.csv")
+    # data = load_data("C:/Users/AnaLisset/Desktop/Proyectos/utec/Introduction-to-mlflow/data/in/application_data.csv")
+    # data = load_data("application_data.csv")
+    data = load_data("C:/Users/AnaLisset/Desktop/Proyectos/utec/Introduction-to-mlflow/data/in/application_data.csv")
 
+ 
+    
     # Prepare data
     X_train, X_test, y_train, y_test = prepare_data(data)
-
+    
     # Train model
     model, accuracy = train_model(X_train, y_train, X_test, y_test)
     n_estimators = model.n_estimators
